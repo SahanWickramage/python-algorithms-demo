@@ -13,7 +13,7 @@ my_graph = {
 }
 ```
 
-Graph traversal algorithms need two data structures. a queue for hold nodes that are to be visited and a set for hold node are already visited.
+Breadth first search algorithm need two data structures. a queue for hold nodes that are to be visited and a set for hold node are already visited.
 
 ```python
 node_queue = deque() # initialize queue
@@ -26,3 +26,11 @@ visited_node_set.add(current_node) # add elements
 current_node not in visited_node_set # check existence
 ```
 
+Depth first search algorithm need two data structures. a stack for hold nodes that are to be visited and a set for hold node are already visited.
+
+```python
+node_stack = deque() # initialize stack
+node_stack.append(current_node) # push elements
+node_stack.pop() # pop elements
+node_stack[-1] # check last element without popping
+```
