@@ -34,3 +34,5 @@ node_stack.append(current_node) # push elements
 node_stack.pop() # pop elements
 node_stack[-1] # check last element without popping
 ```
+
+Topological sort is forward or reversed depth first search based on the context. Topological sort gives the execution order of a dependent tasks
