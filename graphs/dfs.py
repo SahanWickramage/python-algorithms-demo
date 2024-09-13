@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def main():
     graph = {
         "A": ["B", "C"],
@@ -8,16 +9,17 @@ def main():
         "D": []
     }
 
-    dfs(graph, "A")
+    print(dfs(graph, "A"))
 
 
 def dfs(graph, start_node):
     converted_graph = {k: deque(v) for k, v in graph.items()}
     node_stack = deque()
     visited_node_set = set()
+    visited_sequence = []
 
     current_node = start_node
-    print(start_node)
+    visited_sequence.append(current_node)
     visited_node_set.add(current_node)
     node_stack.append(current_node)
 
@@ -27,9 +29,11 @@ def dfs(graph, start_node):
         else:
             current_node = converted_graph[node_stack[-1]].pop()
             if current_node not in visited_node_set:
-                print(current_node)
+                visited_sequence.append(current_node)
                 visited_node_set.add(current_node)
                 node_stack.append(current_node)
+
+    return visited_sequence
 
 
 if __name__ == "__main__":
